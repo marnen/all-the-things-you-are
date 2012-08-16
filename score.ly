@@ -10,8 +10,25 @@
 
 \include "english.ly"
 
-verse= \lyricmode {
-
+verse = \lyricmode {
+  Time and a -- gain I’ve longed for ad -- ven -- ture,
+  some -- thing to make my heart beat the fast -- er.
+  What did I long for? I nev -- er real -- ly knew.
+  Find -- ing your love I’ve found my ad -- ven -- ture;
+  touch -- ing your hand my heart beats the fast -- er.
+  All that I want in all of this world is you.
+  
+  You are the prom -- is’d kiss of spring -- time
+  that makes the lone -- ly win -- ter seem long.
+  You are the vel -- vet hush of eve -- ning
+  that trem -- bles on the brink of a love -- ly song.
+  
+  You are the an -- gel glow that lights a star,
+  the dear -- est things I know are what you are.
+  
+  Some -- day my hap -- py arms will hold you,
+  and some -- day I’ll know the mo -- ment di -- vine
+  when all the things you are are mine.
 }
  
 staffSoprano = \new Staff {
