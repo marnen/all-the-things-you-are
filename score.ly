@@ -39,6 +39,8 @@ global = {
   \tempo 4 = 100
   \key g \major
 }
+
+waltz = { \tempo "Jazz waltz, in 1" 2. = 66 }
  
 staffSoprano = \new Staff {
 	\set Staff.instrumentName = "Soprano"
@@ -55,7 +57,13 @@ staffSoprano = \new Staff {
 	    d,='8. d16 d4 g a | \time 3/2 b c8 b a4 g2 r4 |
 	    \time 4/4 b,=8. b16 b4 fs' g | \time 3/2 a b8 a g4 fs2 r4 |
 	    \time 4/4 d='8. d16 d4 g d | d8. d16 d4 a' d, |
-	    g='1( ~ | \time 5/4 g2 c2) r4\fermata ||
+	    g='1( ~ | \time 5/4 g2 c2) r4\fermata \bar "||"
+	    \key f \minor
+	    \waltz
+	    \time 3/4 af='2. | df |
+	    g,=' | c |
+	    f,=' | bf |
+	    df=''( | c)\fermata \bar "||"
 		}
 
 	\bar "|."
@@ -77,8 +85,14 @@ staffAlto = \new Staff {
 	    d='8. d16 d4 d e | fs g8 fs e( ds) e2 r4 |
 	    a,=8. a16 a4 c d! | e g8 f ef( d) c2 r4 |
 	    d='1( | c) |
-	    b=4 c cs d | ds( e af g ~ g)\fermata ~ ||
-	    
+	    b=4 c cs d | ds( e af g ~ g)\fermata ~ \bar "||"
+	    \key f \minor
+	    \waltz
+	    \time 3/4
+	    g='4( f ef | df ef f) ~ |
+	    f='( ef df | c df ef) ~ |
+	    ef='( df c | bf c df) |
+	    <g=' bf>2. ~ | q\fermata \bar "||"
 	  }
 
 	\bar "|."
@@ -99,7 +113,14 @@ staffTenor = \new Staff {
 	    b=8. b16 b4 b c | d e8 d c4 b2 r4 |
 	    fs=8. fs16 fs4 a b | c ef8 df c( b) a2 r4 |
 	    b=1( | a) |
-	    g=4 af a bf | b( c <bf e>2) r4\fermata ||
+	    g=4 af a bf | b( c <bf e>2) r4\fermata \bar "||"
+	    \key f \minor
+	    \waltz
+	    \time 3/4
+	    ef='4( df c | bf c df) ~ |
+	    df='( c bf | af bf c) ~ |
+	    c='( bf af | g af bf) |
+	    f'='2.( | e)\fermata \bar "||"
 	  }
 	}
 	
@@ -121,7 +142,14 @@ staffBass = \new Staff {
 	    a'=8. a16 g4 fs g | g a8 g fs8( f) e2 r4 |
 	    e=8. e16 ds4 ds e | fs f8 ef d4 d2 r4 |
 	    a'=4( g fs e) | g( fs e d) |
-	    f= e ef d | df( c2.) r4\fermata ||
+	    f= e ef d | df( c2.) r4\fermata \bar "||"
+	    \key f \minor
+	    \waltz
+	    \time 3/4
+	    f=2. | bf |
+	    ef,= | af |
+	    df,= | g |
+	    c,= ~ | c\fermata \bar "||"
 	  }
 	}
 	
