@@ -41,6 +41,8 @@ global = {
 }
 
 waltz = { \tempo "Jazz waltz, in 1" 2. = 66 }
+
+swing = { \tempo "Swing" 4 = 138 }
  
 staffSoprano = \new Staff {
 	\set Staff.instrumentName = "Soprano"
@@ -64,6 +66,39 @@ staffSoprano = \new Staff {
 	    g,=' | c |
 	    f,=' | bf |
 	    df=''( | c)\fermata \bar "||"
+	    
+	    \swing
+	    \time 4/4 af='2.. df8 | r2 r4 af8 g |
+	    r g=' r g r g r g | r c4. r8 gf4. |
+	    f='4 r r8 f f f | r4 f8 b r4 f |
+	    r2 r4 r8 e=' ~ | e2. r4 |
+	    ef='2.. af8 | r2 r4 ef8 d ~ |
+	    d='4 d \times 2/3 { r4 d d } | d g r d |
+	    c=' c c c | c8 d ef d ~ d4 c |
+	    b=1 | R1 | r2 d'( |
+	    ef='' e | f fs | g a | as b) |
+	    R1*3 |
+	    <<
+	      {
+	        \voiceOne R1 | e,=''1 |
+	      }
+	      \new Voice {
+	        \voiceTwo \times 2/3 { r2 r c='' ~ } | c1 |
+	      }
+	    >>
+	    \oneVoice R1 |
+	    af='2.. df8 | r2 r4 af |
+	    g='8 g g4 r8 g r g | r c4. r8 gf4. |
+	    f='1 | <c' ef>2. df4 |
+	    ef,=' ef \times 2/3 { ef4 ef ef } | <ef g>2. f4 |
+	    df='2-- f-- | af-- df-- | <df f>2.-- r4 |
+	    \time 3/2 c=''1 ~ c4 r |
+	    \time 4/4 R1 |
+	    <<
+	      { \voiceTwo r4 g'2.\fermata }
+	      \new Voice { \voiceOne r2 c='''2\fermata }
+	    >>
+	    
 		}
 
 	\bar "|."
@@ -88,11 +123,41 @@ staffAlto = \new Staff {
 	    b=4 c cs d | ds( e af g ~ g)\fermata ~ \bar "||"
 	    \key f \minor
 	    \waltz
-	    \time 3/4
 	    g='4( f ef | df ef f) ~ |
 	    f='( ef df | c df ef) ~ |
 	    ef='( df c | bf c df) |
 	    <g=' bf>2. ~ | q\fermata \bar "||"
+	    
+	    \swing
+	    ef='2.. af8 | r2 r4 d,8 ef |
+	    r f=' r ef r d r df | r c( g' ef) r d4. |
+	    df='4 r r8 ef df c | r4 c8 b r4 b |
+	    r2 r4 r8 b= ~ | b2. r4 |
+	    r2 bf=4. ef8 | r2 r4 af,8 af ~ |
+	    af=4 af \times 2/3 { r4 c cf } | cf4 bf r bf |
+	    c=' b bf a | bf2 a |
+	    a= fs4 g ~ | g r d'2-- | g-- d( |
+	    ef=' e | f fs | g a | as b |
+	    c='' cs | ds e | fs) r |
+	    <<
+	      {
+	        \voiceOne \times 2/3 { r2 af,='1 ~ } | af1 |
+	      }
+	      \new Voice { 
+	        \voiceTwo e='1 ~ | e |
+	      }
+	    >>
+	    \oneVoice R1 |
+	    ef='2.. af8 | r2 r4 d, |
+	    ef='8 ef f4 r8 ef r df | r c( g' ef) r d4. |
+	    df='1 | <ff af>2. df4 |
+	    ef=' d \times 2/3 { df4 c c } | c2. r4 |
+	    df='2-- df-- | f-- <f af>-- |
+	    q2.-- r4 | g='1 ~ g4 r4 | R1 |
+	    <<
+	      { \voiceTwo c=''2 ~ c\fermata }
+	      \new Voice { \voiceOne r2 d }
+	    >>
 	  }
 
 	\bar "|."
@@ -114,13 +179,38 @@ staffTenor = \new Staff {
 	    fs=8. fs16 fs4 a b | c ef8 df c( b) a2 r4 |
 	    b=1( | a) |
 	    g=4 af a bf | b( c <bf e>2) r4\fermata \bar "||"
+	    
 	    \key f \minor
 	    \waltz
-	    \time 3/4
 	    ef='4( df c | bf c df) ~ |
 	    df='( c bf | af bf c) ~ |
 	    c='( bf af | g af bf) |
 	    f'='2.( | e)\fermata \bar "||"
+	    
+	    \swing
+	    c='2.. f8 | r2 r4 cf8 bf |
+	    r af= r g r f r ff | r ef( bf' g) r a4. |
+	    af=4 r r8 c bf af | r4 ef8 d r4 g |
+	    r2 r4 r8 g= ~ | g2. r4 |
+	    c='2.. c8 | r2 r4 c8 cf ~ |
+	    cf='4 bf \times 2/3 { r4 af af } | af4 g r g |
+	    af= g gf f | e2 ef |
+	    d1 ~ | d4 r d2-- | g-- d' |
+	    d='2 c4 c ~ | c cs, d c' |
+	    b=1 | r2 b( | c cs | ds e |
+	    fs='2) r | R1*2 | c8 c bf4 af gf |
+	    
+	    f=4( f' ~ f4.) f8 | r2 r4 cf |
+	    bf=8 bf af4 r8 g r ff | r ef( bf' g) r a4. |
+	    af=1 | bf2. df4 |
+	    ef=' d \times 2/3 { df4 c b } | bf2( a4) r |
+	    df='2-- df-- | <df af>-- q-- |
+	    q2.-- r4 | df='1 ~ df4 r |
+	    r2
+	    <<
+	      { \voiceTwo bf= ~ | bf ~ bf\fermata }
+	      \new Voice { \voiceOne r4 f' ~ | f2 ~ f\fermata }
+	    >>
 	  }
 	}
 	
@@ -145,11 +235,47 @@ staffBass = \new Staff {
 	    f= e ef d | df( c2.) r4\fermata \bar "||"
 	    \key f \minor
 	    \waltz
-	    \time 3/4
 	    f=2. | bf |
 	    ef,= | af |
 	    df,= | g |
 	    c,= ~ | c\fermata \bar "||"
+	    
+	    \swing
+	    f=2.. bf8 | r2 r4 ff8 ef |
+	    r df= r c r cf r bff | r af4. r8 d4. |
+	    df=4 r4 r8 af' g f | r4 af,8 g r4 d' |
+	    r2 r4 r8 c= ~ | c2. r4 |
+	    g'=2.. f8 | r2 r4 f,8 f ~ |
+	    f=,4 bf \times 2/3 { r4 f' ff} | ff4 ef r bf |
+	    bf=, a af g | g2 fs2 |
+	    g=,1 ~ | g4 r r2 | R1 |
+	    a=,8 b r b a c( e) d | R1 |
+	    r4 r8 d= c <\parenthesize \tweak #'font-size #-2 b ds,> <\parenthesize \tweak #'font-size #-2 a e> g |
+	    r4 as=, b b' |
+	    b=2 a4 a ~ | a bf,! c d |
+	    <<
+	      {
+	        \voiceOne \times 2/3 { e=2 af c } | c1 ~ | c |
+	      }
+	      \new Voice {
+	        \voiceTwo e,=1 ~ | e ~ | e |
+	      }
+	    >>
+	    \oneVoice R1 | c'='2.. bf8 |
+	    r2 r4 ff= | ef8 ef df4 r8 c r bff |
+	    r af=,4. r8 d4. |
+	    <<
+	      { \voiceOne df=1 | }
+	      \new Voice { \voiceTwo df4( c bf af) | }
+	    >>
+	    \oneVoice <df= gf,>2. df'4 |
+	    c=' b \times 2/3 { bf4 af g } | f2. r4 |
+	    df'='2-- af-- | f-- <df f>-- |
+	    <bf=, f'>2.-- r4 | <bff ff'>1 ~ q4 r4 |
+	    <<
+	      { \voiceTwo af=,1 ~ | af2 ~ af\fermata }
+	      \new Voice { \voiceOne r4 ef'2. ~ | ef2 ~ ef\fermata}
+	    >>
 	  }
 	}
 	
