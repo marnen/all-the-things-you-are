@@ -1,4 +1,4 @@
-\version "2.14.2"
+\version "2.16.0"
 
 \header {
 	title = "All the Things You Are"
@@ -74,7 +74,7 @@ refrainG = \lyricmode {
 global = {
   \numericTimeSignature
   \dynamicUp
-  #(set-accidental-style 'modern)
+  \accidentalStyle "modern"
   
   \tempo 4 = 100
   \key g \major
@@ -253,7 +253,7 @@ staffTenor = \new Staff = "Tenor" {
 	    r2
 	    <<
 	      { \voiceTwo bf!= ~ | bf ~ bf\fermata }
-	      \new Voice { \voiceOne r4 f!' ~ | f2 ~ f\fermata }
+	      \new Voice { \voiceOne r4 f'! ~ | f2 ~ f\fermata }
 	      \new Lyrics \with { alignAboveContext = Tenor } \lyricmode { \skip 4 mine. __ __ "" }
 	    >>
 	  }
