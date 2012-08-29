@@ -1,4 +1,3 @@
-
 \version "2.14.2"
 
 \header {
@@ -10,25 +9,66 @@
 
 \include "english.ly"
 
-verse = \lyricmode {
+introA = \lyricmode {
   Time and a -- gain I’ve longed for ad -- ven -- ture,
   some -- thing to make my heart beat the fast -- er.
-  What did I long for? I nev -- er real -- ly knew.
+  What did I long for? I nev -- er real -- ly knew. __
   Find -- ing your love I’ve found my ad -- ven -- ture;
   touch -- ing your hand my heart beats the fast -- er.
-  All that I want in all of this world is you.
-  
+}
+
+introB = \lyricmode {
+  All that I want in all of this world is you. __
+}
+
+introTag = \lyricmode {
+  All I want is you. __
+}
+
+introOoh = {
+  \lyricmode { ooh __ } \introTag
+}
+
+waltzDoo = \lyricmode {
+  doo doo doo doo doo doo doo
+}
+
+refrainA = \lyricmode {  
   You are the prom -- is’d kiss of spring -- time
-  that makes the lone -- ly win -- ter seem long.
+  that makes the lone -- ly win -- ter seem long. __
   You are the vel -- vet hush of eve -- ning
-  that trem -- bles on the brink of a love -- ly song.
-  
-  You are the an -- gel glow that lights a star,
-  the dear -- est things I know are what you are.
-  
+  that trem -- bles on the brink of
+}
+
+refrainB = \lyricmode {
+  a love -- ly song.
+}
+ 
+refrainCTenor = \lyricmode {
+  You are the an -- gel glow __ that lights a star.
+}
+
+refrainCBass = \lyricmode {
+  You are the an -- gel __ glow that lights up a star;
+}
+
+ah = \lyricmode { ah __ }
+
+refrainD = \lyricmode {
+  the dear -- est things I know are what you are. __
+}
+ 
+refrainE = \lyricmode {
+  are, what you are. __
+}
+
+refrainF = \lyricmode {
   Some -- day my hap -- py arms will hold you,
   and some -- day I’ll know the mo -- ment di -- vine
-  when all the things you are are mine.
+}
+
+refrainG = \lyricmode {
+  all the things you are are __ mine. __
 }
 
 global = {
@@ -44,7 +84,7 @@ waltz = { \tempo "Jazz waltz, in 1" 2. = 66 }
 
 swing = { \tempo "Swing" 4 = 138 }
  
-staffSoprano = \new Staff {
+staffSoprano = \new Staff = "Soprano" {
 	\set Staff.instrumentName = "Soprano"
 	\set Staff.midiInstrument = "flute"
 	\clef treble
@@ -80,14 +120,15 @@ staffSoprano = \new Staff {
 	    R1*3 |
 	    <<
 	      {
-	        \voiceOne R1 | e,=''1 |
+	        \voiceTwo \times 2/3 { r2 r c,='' ~ } | c1 |
 	      }
-	      \new Voice {
-	        \voiceTwo \times 2/3 { r2 r c='' ~ } | c1 |
+	      \new Voice = "areSoprano" {
+	        \voiceOne R1 | e=''1 |
 	      }
+	      \new Lyrics \with { alignAboveContext = Soprano } \lyricmode { _1 are. }
 	    >>
 	    \oneVoice R1 |
-	    af='2.. df8 | r2 r4 af |
+	    af,='2.. df8 | r2 r4 af |
 	    g='8 g g4 r8 g r g | r c4. r8 gf4. |
 	    f='1 | <c' ef>2. df4 |
 	    ef,=' ef \times 2/3 { ef4 ef ef } | <ef g>2. f4 |
@@ -97,6 +138,7 @@ staffSoprano = \new Staff {
 	    <<
 	      { \voiceTwo r4 g'2.\fermata }
 	      \new Voice { \voiceOne r2 c='''2\fermata }
+	      \new Lyrics \with { alignAboveContext = Soprano } \lyricmode { \skip 2 mine. }
 	    >>
 	    
 		}
@@ -105,7 +147,7 @@ staffSoprano = \new Staff {
 	}
 
 }
-staffAlto = \new Staff {
+staffAlto = \new Staff = "Alto" {
 	\set Staff.instrumentName = "Alto"
 	\set Staff.midiInstrument = "clarinet"
 	\clef treble
@@ -140,15 +182,16 @@ staffAlto = \new Staff {
 	    ef=' e | f fs | g a | as b |
 	    c='' cs | ds e | fs) r |
 	    <<
-	      {
-	        \voiceOne \times 2/3 { r2 af,='1 ~ } | af1 |
+	      { 
+	        \voiceTwo e,='1 ~ | e |
 	      }
-	      \new Voice { 
-	        \voiceTwo e='1 ~ | e |
+	      \new Voice = "whatAlto" {
+	        \voiceOne \times 2/3 { r2 af='1 ~ } | af1 |
 	      }
+	      \new Lyrics \with { alignAboveContext = Alto } \lyricmode { \times 2/3 { \skip 2 what1 }  }
 	    >>
 	    \oneVoice R1 |
-	    ef='2.. af8 | r2 r4 d, |
+	    ef!='2.. af8 | r2 r4 d, |
 	    ef='8 ef f4 r8 ef r df | r c( g' ef) r d4. |
 	    df='1 | <ff af>2. df4 |
 	    ef=' d \times 2/3 { df4 c c } | c2. r4 |
@@ -157,6 +200,7 @@ staffAlto = \new Staff {
 	    <<
 	      { \voiceTwo c=''2 ~ c\fermata }
 	      \new Voice { \voiceOne r2 d }
+	      \new Lyrics \with { alignAboveContext = Alto } \lyricmode { \skip 2 mine. }
 	    >>
 	  }
 
@@ -164,7 +208,7 @@ staffAlto = \new Staff {
 	}
 
 }
-staffTenor = \new Staff {
+staffTenor = \new Staff = "Tenor" {
 	\set Staff.instrumentName = "Tenor"
 	\set Staff.midiInstrument = "french horn"
 	\clef "G_8"
@@ -182,7 +226,7 @@ staffTenor = \new Staff {
 	    
 	    \key f \minor
 	    \waltz
-	    ef='4( df c | bf c df) ~ |
+	    ef!='4( df c | bf c df) ~ |
 	    df='( c bf | af bf c) ~ |
 	    c='( bf af | g af bf) |
 	    f'='2.( | e)\fermata \bar "||"
@@ -208,8 +252,9 @@ staffTenor = \new Staff {
 	    q2.-- r4 | df='1 ~ df4 r |
 	    r2
 	    <<
-	      { \voiceTwo bf= ~ | bf ~ bf\fermata }
-	      \new Voice { \voiceOne r4 f' ~ | f2 ~ f\fermata }
+	      { \voiceTwo bf!= ~ | bf ~ bf\fermata }
+	      \new Voice { \voiceOne r4 f!' ~ | f2 ~ f\fermata }
+	      \new Lyrics \with { alignAboveContext = Tenor } \lyricmode { \skip 4 mine. __ __ "" }
 	    >>
 	  }
 	}
@@ -217,7 +262,7 @@ staffTenor = \new Staff {
 	\bar "|."
 
 }
-staffBass = \new Staff {
+staffBass = \new Staff = "Bass" {
 	\set Staff.instrumentName = "Bass"
 	\set Staff.midiInstrument = "bassoon"
 	\clef bass
@@ -255,13 +300,14 @@ staffBass = \new Staff {
 	    b=2 a4 a ~ | a bf,! c d |
 	    <<
 	      {
+	        \voiceTwo e=1 ~ | e ~ | e |
+	      }
+	      \new Voice = "refrainEBassOne" {
 	        \voiceOne \times 2/3 { e=2 af c } | c1 ~ | c |
 	      }
-	      \new Voice {
-	        \voiceTwo e,=1 ~ | e ~ | e |
-	      }
+	      \new Lyrics \with { alignAboveContext = Bass } \lyricsto "refrainEBassOne" \refrainE
 	    >>
-	    \oneVoice R1 | c'='2.. bf8 |
+	    \oneVoice R1 | c='2.. bf8 |
 	    r2 r4 ff= | ef8 ef df4 r8 c r bff |
 	    r af=,4. r8 d4. |
 	    <<
@@ -275,6 +321,7 @@ staffBass = \new Staff {
 	    <<
 	      { \voiceTwo af=,1 ~ | af2 ~ af\fermata }
 	      \new Voice { \voiceOne r4 ef'2. ~ | ef2 ~ ef\fermata}
+	      \new Lyrics \with { alignAboveContext = Bass } \lyricmode { \skip 4 mine.2. }
 	    >>
 	  }
 	}
@@ -286,17 +333,51 @@ staffBass = \new Staff {
 \score {
 	<<
 		\staffSoprano
-		\context Lyrics = "lmelodySop" \lyricmode { \lyricsto "melodySop" \verse }
+		\context Lyrics = "lmelodySop" \lyricmode {
+		  \lyricsto "melodySop" {
+		    \introA \introB
+		    \waltzDoo
+		    \refrainA \refrainB
+		    \ah
+		    \lyricmode { you __ }
+		    \refrainF \lyricmode { when } \refrainG
+		  }
+		}
 		
 		\staffAlto
-		\context Lyrics = "lmelodyAlt" \lyricmode { \lyricsto "melodyAlt" \verse }
+		\context Lyrics = "lmelodyAlt" \lyricmode {
+		  \lyricsto "melodyAlt" {
+		    \introA \introOoh
+		    \lyricmode { doo }
+		    \refrainA \lyricmode { love -- ly song. __ You are } \ah
+		    \lyricmode { That’s __ }
+		    \refrainF \refrainG
+		  }
+		}
 		
 		\staffTenor
-		\context Lyrics = "lmelodyTen" \lyricmode { \lyricsto "melodyTen" \verse }
+		\context Lyrics = "lmelodyTen" \lyricmode {
+		  \lyricsto "melodyTen" {
+		    \introA \introOoh
+		    \lyricmode { ooh doo }
+		    \refrainA \lyricmode { song. __ }
+		    \refrainCTenor \ah
+		    \lyricmode { doo doo doo doo doo }
+		    \refrainF \refrainG
+		  }
+		}
 		
 		\staffBass
-		\context Lyrics = "lmelodyBas" \lyricmode { \lyricsto "melodyBas" \verse }
-		
+		\context Lyrics = "lmelodyBas" \lyricmode {
+		  \lyricsto "melodyBas" {
+		    \introA \lyricmode { ooh __ } \introOoh
+		    \waltzDoo
+		    \refrainA \lyricmode { song. __ }
+		    \refrainCBass
+		    \refrainD 
+		    \refrainF \refrainG
+		  }
+		}
 	>>
 
 	\midi {
